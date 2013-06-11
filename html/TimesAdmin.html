@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../js/jquery.js" ></script>
+<title>Administrating Davining times... </title>
+
+<script>
+$(document).ready(function(){
+  $('input[type=text][title],input[type=password][title],textarea[title]').each(function(i){
+    $(this).addClass('input-prompt-' + i);
+    var promptSpan = $('<span class="input-prompt"/>');
+    $(promptSpan).attr('id', 'input-prompt-' + i);
+    $(promptSpan).append($(this).attr('title'));
+    $(promptSpan).click(function(){
+      $(this).hide();
+      $('.' + $(this).attr('id')).focus();
+    });
+    if($(this).val() != ''){
+      $(promptSpan).hide();
+    }
+    $(this).before(promptSpan);
+    $(this).focus(function(){
+      $('#input-prompt-' + i).hide();
+    });
+    $(this).blur(function(){
+      if($(this).val() == ''){
+        $('#input-prompt-' + i).show();
+      }
+    });
+  });
+});
+</script>
+<style>
+.input-prompt {
+  position: absolute;
+  font-style: italic;
+  color: #aaa;
+  margin: 0.2em 0 0 0.5em;
+}
+.Yomtif {
+	color:black;
+	align:right;
+	background-color:#977b45;
+	border:1px solid #bbb;
+	}
+</style>
+</head>
+<body>
+<form name='infoForm' id='infoForm' action='../php/TimesAdmin.php' method='POST'  enctype="multipart/form-data">
+<table>
+<tr><td><u>Sunday</u></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type='text' id='SundayShacharis' name='SundayShacharis' value='6:30/7:30/8:30'></td><td><input class='Yomtif' size=14 type='text' id='SundayYomtifName' name='SundayYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha</i></td><td><input size=10 type='text' id='SundayMincha' name='SundayMincha' value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='SundayYomtifTime' name='SundayYomtifTime' title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Ma'ariv</i></td><td><input size=10 type='text' id='SundayMaariv' name='SundayMaariv' value='8:30'></td><td></td></tr>
+<tr><td><u>Monday</u></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type=text id=MondayShacharis name=MondayShacharis value='6:00/7:00/8:00'></td><td><input class='Yomtif' size=14 type='text' id='MondayYomtifName' name='MondayYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha</i></td><td><input size=10 type=text id=MondayMincha name=MondayMincha value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='MondayYomtifTime' name='MondayYomtifTime'  title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Ma'ariv</i></td><td><input size=10 type=text id=MondayMaariv name=MondayMaariv value='8:30'></td><td></td></tr>
+<tr><td><u>Tuesday</u></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type=text id=TuesdayShacharis name=TuesdayShacharis value='6:15/7:00/8:00'></td><td><input class='Yomtif' size=14 type='text' id='TuesdayYomtifName' name='TuesdayYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha</i></td><td><input size=10 type=text id=TuesdayMincha name=TuesdayMincha value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='TuesdayYomtifTime' name='TuesdayYomtifTime'  title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Ma'ariv</i></td><td><input size=10 type=text id=TuesdayMaariv name=TuesdayMaariv value='8:30'></td><td></td></tr>
+<tr><td><u>Wednesday</u></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type=text id=WednesdayShacharis name=WednesdayShacharis value='6:15/7:00/8:00'></td><td><input class='Yomtif' size=14 type='text' id='WednesdayYomtifName' name='WednesdayYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha</i></td><td><input size=10 type=text id=WednesdayMincha name=WednesdayMincha value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='WednesdayYomtifTime' name='WednesdayYomtifTime'  title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Ma'ariv</i></td><td><input size=10 type=text id=WednesdayMaariv name=WednesdayMaariv value='8:30'></td><td></td></tr>
+<tr><td><u>Thursday</u></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type=text id=ThursdayShacharis name=ThursdayShacharis value='6:00/7:00/8:00'></td><td><input class='Yomtif' size=14 type='text' id='ThursdayYomtifName' name='ThursdayYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha</i></td><td><input size=10 type=text id=ThursdayMincha name=ThursdayMincha value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='ThursdayYomtifTime' name='ThursdayYomtifTime'  title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Ma'ariv</i></td><td><input size=10 type=text id=ThursdayMaariv name=ThursdayMaariv value='8:30'></td><td></td></tr>
+<tr><td><u>Friday</u></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type=text id=FridayShacharis name=FridayShacharis value='6:00/7:00/8:00'></td><td><input class='Yomtif' size=14 type='text' id='FridayYomtifName' name='FridayYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha</i></td><td><input size=10 type=text id=FridayMincha name=FridayMincha value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='FridayYomtifTime' name='FridayYomtifTime'  title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Shabbos</i></td><td><input size=10 type=text id=FridayKabbalas name=FridayKabbalas value='8:30'></td><td></td></tr>
+<tr><td><u>Shabbos</u></td><td></td><td></td><td></td></tr>
+<tr><td></td><td><i>Shacharis</i></td><td><input size=10 type=text id=ShabbosShacharis name=ShabbosShacharis value='6:15/8:45'></td><td><input class='Yomtif' size=14 type='text' id='ShabbosYomtifName' name='ShabbosYomtifName' title='Yomtif Name'></td></tr>
+<tr><td></td><td><i>Mincha/Shalos Seudus</i></td><td><input size=10 type=text id=ShabbosMincha name=ShabbosMincha value='7:45'></td><td><input class='Yomtif' size=14 type='text' id='ShabbosYomtifTime' name='ShabbosYomtifTime'  title='Licht Benschen'></td></tr>
+<tr><td></td><td><i>Ma'ariv</i></td><td><input size=10 type=text id=ShabbosMaariv name=ShabbosMaariv value='9:30'></td><td></td></tr>
+
+<tr><td></td><td><input type='submit' name='submit' id='submit' value='Store!'></td><td></td></tr>
+</table>
+</form>
+</body>
+</html>

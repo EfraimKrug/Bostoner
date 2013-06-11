@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/Bostoner.css"> 
+<link rel="stylesheet" type="text/css" href="../css/ButtonMenu.css">
+<script type="text/javascript" src="../js/jquery.js" ></script>
+<title>The Bostoner Rebbe, shlita... </title>
+<script type="text/javascript"><!-- this jQuery runs the top menu -->
+$(document).ready(function(){
+  $("#contentMiddle01").toggle(function(){
+    $("#contentMiddle01Slide").slideDown("fast");
+  },
+  function(){
+	$("#contentMiddle01Slide").slideUp("fast");
+  });
+  
+  $("#contentMiddle02").toggle(function(){
+    $("#contentMiddle02Slide").slideDown("fast");
+  },
+  function(){
+	$("#contentMiddle02Slide").slideUp("fast");
+  });
+
+  $("#contentMiddle03").toggle(function(){
+    $("#contentMiddle03Slide").slideDown("fast");
+  },
+  function(){
+	$("#contentMiddle03Slide").slideUp("fast");
+  });
+
+  $("#contentMiddle04").toggle(function(){
+    $("#contentMiddle04Slide").slideDown("fast");
+  },
+  function(){
+	$("#contentMiddle04Slide").slideUp("fast");
+  });
+});
+
+</script>
+</head>
+<body>
+		<div id="contentMiddle">
+			<hr>
+			<div id="contentMiddle03"><div class="vcontentMiddle" id="contentMiddle03Inside">Give stories...</div></div>
+			<div id="contentMiddle03Slide">
+					<form name='infoForm' id='infoForm' action='../php/infoCollection.php' method='POST'  enctype="multipart/form-data">
+					<table>
+					<tr><td>We are currently in the process of gathering - what you might call - 'stuff', and we can't get there alone. If you have any 'stuff', please help us out and send it along!</td></tr>
+					<tr><td>Give <b>your name</b> if you want... or not... Please, remember what one person said to me "Memories? I remember things that I don't think ever happened!" I am not checking for accuracy!</td></tr>
+					<tr><td><input name='iName' id='iName' size='45'></td></tr>
+					<tr><td>If you would like to give us <b>a story or memory</b>... please!</td></tr>
+					<tr><td><textarea name='iMemory' id='iMemory' rows='5' cols='45'></textarea></td></tr>
+					<tr><td>If you would like to request a page <b>in memory of</b> someone or some event... 
+					Please say what it is and then make a <a href="Donate.html">donation!</a></td></tr>
+					<tr><td><textarea name='iDonation' id='iDonation' rows='5' cols='45'></textarea></td></tr>
+					<tr><td>If you have <b>a picture</b> you want to share... upload it here!</td></tr>
+					<tr><td><input type="file" name="file" id="file"></td></tr>
+					<tr><td><input type='submit' name='submit' id='submit' value='Send Info!'></td></tr>
+					</table>
+					</form>		
+			</div>
+			<hr>
+			<hr>
+		</div>
+</body>
+</html>

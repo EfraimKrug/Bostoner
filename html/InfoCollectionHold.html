@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p>If you want to donate to the web development team... (so far that is just me). You can put a sign on the page - 
+"In memory of...", "In honor of...", "I feel good because...", or "Baruch HaShem... and who needs a reason for that?!?"</p>
+<p>So - whatever the reason, whatever your request - just write it up in the "<i>Web Donation</i>" space above. What
+ever you put there just goes to me to see... nobody else will see it until I use it or put it elsewhere - 
+so just tell me what to do!!! </p>
+<p>I do want to remind you - the money given via this particular button - this one below (yup - the one on this 
+particular page) sends money to me (Efraim) for my web-efforts... currently I have put in time and money... and
+there may be more money needed!</p>
+<p>Thanks so much!</p> 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ME7YX47JAWAEE">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<form name='infoForm' id='infoForm' action='../php/infoCollection.php' method='POST'  enctype="multipart/form-data">
+<table>
+<tr><td>We are currently in the holy process of gathering - what you might call - 'stuff', and we can't get there alone. If you have any 'stuff', please help us out and send it along!</td></tr>
+<tr><td>Give your name if you want... or not... </td></tr>
+<tr><td><input name='iName' id='iName' size='45'></td></tr>
+<tr><td>If you would like to give us a story or memory... please!</td></tr>
+<tr><td><textarea name='iMemory' id='iMemory' rows='15' cols='45'></textarea></td></tr>
+<tr><td>If you would like to request a page in memory of someone or some event... 
+Please say what it is and make a donation above!</td></tr>
+<tr><td><textarea name='iDonation' id='iDonation' rows='15' cols='45'></textarea></td></tr>
+<tr><td>If you have a picture you want to share... that would be great!</td></tr>
+<tr><td><input type="file" name="file" id="file"></td></tr>
+<tr><td><input type='submit' name='submit' id='submit' value='Send Info!'></td></tr>
+</table>
+</form>
+</body>
+</html>
